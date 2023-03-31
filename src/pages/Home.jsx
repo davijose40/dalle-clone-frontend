@@ -95,7 +95,7 @@ const Home = () => {
                         {searchText ? (
                             <RenderCards data={searchResults} title="No search results found"/>
                         ) : (
-                            <RenderCards data={allPosts} title="No posts found"/>
+                            <RenderCards data={allPosts} title="posts found"/>
                         )}
                     </div>
                 </>
