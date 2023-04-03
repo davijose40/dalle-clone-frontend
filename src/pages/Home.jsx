@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { Card, FormField, Loader } from '../components'
+import config from '../config'
 
 const RenderCards = ({ data, title }) => {
     if(data?.length > 0) return data.map((post) => <Card key={post._id}{...post} />)
@@ -20,9 +21,9 @@ const Home = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true)
-
+            
             try {
-                const response = await fetch('https://dalle-backend-981r.onrender.com/api/v1/post', {
+                const response = await fetch(`${config.HOST}${config.RESOURCEHOMEPOST}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
